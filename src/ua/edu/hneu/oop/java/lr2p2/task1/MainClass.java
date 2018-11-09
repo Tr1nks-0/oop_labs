@@ -1,10 +1,9 @@
 package ua.edu.hneu.oop.java.lr2p2.task1;
 
 import ua.edu.hneu.oop.java.util.ConsoleUtil;
+import ua.edu.hneu.oop.java.util.FileUtil;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -52,16 +51,8 @@ public class MainClass {
     private static void init() throws IOException {
         sentenceFinder = new SentenceFinder();
         consoleUtil = new ConsoleUtil();
-        loadText();
+        FileUtil fileUtil = new FileUtil();
+        text = fileUtil.loadFileText(FILE_NAME);
     }
 
-    private static void loadText() throws IOException {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(MainClass.class.getResourceAsStream(FILE_NAME)))) {
-            StringBuilder builder = new StringBuilder();
-            for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-                builder.append(line);
-            }
-            text = builder.toString().trim();
-        }
-    }
 }
