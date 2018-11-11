@@ -1,4 +1,4 @@
-package ua.edu.hneu.oop.java.lr3.task3;
+package ua.edu.hneu.oop.java.lr3.task4;
 
 import ua.edu.hneu.oop.java.util.ConsoleUtil;
 
@@ -18,7 +18,7 @@ public class MainClass {
     private static final String ILLEGAL_ARGUMENT_EXCEPTION_FORMAT = "%s Please correct Your input and try again.%n";
     private static final String EMPTY_PARAMETERS_MESSAGE = "Expected one parameter - double number. Obtained 0.";
     private static final String WRONG_FIRST_PARAMETER_FORMAT = "Wrong first parameter. Expected double, got:%s%n";
-    private static final String INVITATION = "Based on abstract class"+System.lineSeparator()+"Enter x value or \"exit\" for exit";
+    private static final String INVITATION = "Based on interface"+System.lineSeparator()+"Enter x value or \"exit\" for exit";
     private static final String DELIMITER_LINE = IntStream.range(0, 15).mapToObj(i -> "-").collect(Collectors.joining());
 
     private static final double a = 12.2;
