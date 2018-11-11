@@ -38,7 +38,7 @@ public class MainClass {
     }
 
     private static void init() {
-        consoleUtil = new ConsoleUtil();
+        consoleUtil = ConsoleUtil.getInstance();
         wordSplitter = new WordSplitter();
     }
 }

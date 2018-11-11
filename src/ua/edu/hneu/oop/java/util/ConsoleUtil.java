@@ -6,11 +6,20 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 
 public class ConsoleUtil {
-    private static final String PAREMETER_DELIMETER = " ";
+    private static final String PARAMETER_DECIMETER = " ";
+    private static ConsoleUtil instance;
     private BufferedReader reader;
 
-    public ConsoleUtil() {
+
+    private ConsoleUtil() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    public static ConsoleUtil getInstance() {
+        if (instance == null) {
+            instance = new ConsoleUtil();
+        }
+        return instance;
     }
 
     public void println(String text) {
@@ -30,7 +39,7 @@ public class ConsoleUtil {
     }
 
     public String[] splitInput(String input) {
-        return input.trim().split(PAREMETER_DELIMETER);
+        return input.trim().split(PARAMETER_DECIMETER);
     }
 
     public void printf(String format, Object... values) {

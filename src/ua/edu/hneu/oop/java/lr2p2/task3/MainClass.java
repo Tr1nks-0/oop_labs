@@ -27,6 +27,6 @@ public class MainClass {
     private static void init() throws IOException {
         syntaxAnalyser = new SyntaxAnalyser();
         syntaxAnalyser.init();
-        consoleUtil = new ConsoleUtil();
+        consoleUtil = ConsoleUtil.getInstance();
     }
 }

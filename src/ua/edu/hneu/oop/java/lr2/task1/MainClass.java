@@ -43,7 +43,7 @@ public class MainClass {
     }
 
     private static void init() throws IOException {
-        consoleUtil = new ConsoleUtil();
+        consoleUtil = ConsoleUtil.getInstance();
         verbCutter = new VerbCutter();
     }
 }
