@@ -78,7 +78,7 @@ public class MainClass {
     }
 
     private static void init() {
-        consoleUtil = new ConsoleUtil();
+        consoleUtil = ConsoleUtil.getInstance();
         matrixProcessor = new MatrixProcessor();
     }
 }

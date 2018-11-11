@@ -28,7 +28,7 @@ public class MainClass {
 
     private static void init() throws IOException {
         wordFinder = new WordFinder();
-        consoleUtil = new ConsoleUtil();
+        consoleUtil = ConsoleUtil.getInstance();
         FileUtil fileUtil = new FileUtil();
         text = fileUtil.loadFileText(FILE_NAME);
     }

@@ -50,7 +50,7 @@ public class MainClass {
 
     private static void init() throws IOException {
         sentenceFinder = new SentenceFinder();
-        consoleUtil = new ConsoleUtil();
+        consoleUtil = ConsoleUtil.getInstance();
         FileUtil fileUtil = new FileUtil();
         text = fileUtil.loadFileText(FILE_NAME);
     }

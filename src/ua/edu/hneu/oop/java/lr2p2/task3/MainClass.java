@@ -5,7 +5,6 @@ import ua.edu.hneu.oop.java.util.ConsoleUtil;
 import java.io.IOException;
 
 public class MainClass {
-    private static final String INVITATION = "All words start or end with vowel:";
     private static SyntaxAnalyser syntaxAnalyser;
     private static ConsoleUtil consoleUtil;
 
@@ -13,8 +12,6 @@ public class MainClass {
     public static void main(String[] args) {
         try {
             init();
-//            consoleUtil.println(INVITATION);
-
             consoleUtil.printf("%s - %b", "x", syntaxAnalyser.isFormula("x"));
             consoleUtil.printf("%s - %b", "x+x", syntaxAnalyser.isFormula("x+x"));
 
@@ -27,6 +24,6 @@ public class MainClass {
     private static void init() throws IOException {
         syntaxAnalyser = new SyntaxAnalyser();
         syntaxAnalyser.init();
-        consoleUtil = new ConsoleUtil();
+        consoleUtil = ConsoleUtil.getInstance();
     }
 }
