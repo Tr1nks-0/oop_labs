@@ -3,17 +3,19 @@ package ua.edu.hneu.oop.java.lr2p2.task3;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SyntaxAnalyser {
+    private static final String SIGN_GROUP_NAME = "sign";
+    private static final String CONTENT_GROUP_NAME = "content";
     private static final String NAME_REGEX = "[xyz]";
-
-    //Построить синтаксический анализатор для понятия формула.
-    //формула ::= терм | терм + формула | терм – формула
-    //терм ::= имя | (формула) | [формула] | {формула}
-    //имя ::= x|y|z
-
-
+    private static final Pattern SUM_COMBINATION_PATTERN = Pattern.compile("((\\(.*\\))|(\\{.*})|(\\[.*])|[xyz]) *(?<" + SIGN_GROUP_NAME + ">[+-]) *((\\(.*\\))|(\\{.*})|(\\[.*])|[xyz])");
+    private static final Pattern[] BRACKETED_REGEXES = {
+            Pattern.compile("^(\\()(?<" + CONTENT_GROUP_NAME + ">.*)(\\))$"),
+            Pattern.compile("^(\\[)(?<" + CONTENT_GROUP_NAME + ">.*)(])$"),
+            Pattern.compile("^(\\{)(?<" + CONTENT_GROUP_NAME + ">.*)(})$")
+    };
     private List<String> errors;
 
     public void init() {
@@ -24,8 +26,12 @@ public class SyntaxAnalyser {
         return errors;
     }
 
+    /**
+     * имя ::= x|y|z
+     */
     public boolean isName(String input) {
-        if (Pattern.matches(NAME_REGEX, input)) {
+        String trimmed = input.trim();
+        if (!trimmed.isEmpty() && trimmed.trim().matches(NAME_REGEX)) {
             return true;
         }
         return false;
@@ -35,34 +41,38 @@ public class SyntaxAnalyser {
      * терм ::= имя | (формула) | [формула] | {формула}
      */
     public boolean isTerm(String input) {
-        return isName(input) ||                         // имя
-                isBracketed(input, this::isFormula) ||  //(формула)
-                isFormula(input) ||                     // [формула] - 1 time  or {формула}
-                input.isEmpty();                        // [формула] - 0 time
+        return isName(input) ||
+                isBracketed(input, this::isFormula);
     }
 
+    /**
+     * формула ::= терм | терм + формула | терм – формула
+     */
     public boolean isFormula(String input) {
-        if (isTerm(input)) {
-            return true;
-        } else if (isCombination(input, "+", this::isTerm, this::isFormula)) {//split + here
-            return true;
-        } else if (isCombination(input, "-", this::isTerm, this::isFormula)) {//split + here
-            return true;
-        } else {
-            return false;
-        }
+        return isSumCombination(input, this::isTerm, this::isFormula) ||
+                isTerm(input);
     }
 
-    private boolean isCombination(String input, String connector, Predicate<String> firstPredicate, Predicate<String> secondPredicate) {
-        return input.contains(connector) &&
-                firstPredicate.test(input.substring(0, input.indexOf(connector))) &&
-                secondPredicate.test((input.substring(input.indexOf(connector))));
+    private boolean isSumCombination(String input, Predicate<String> firstPredicate, Predicate<String> secondPredicate) {
+        String trimmed = input.trim();
+        Matcher matcher = SUM_COMBINATION_PATTERN.matcher(trimmed);
+        if (matcher.matches()) {
+            int index = trimmed.indexOf(matcher.group(SIGN_GROUP_NAME));
+            return firstPredicate.test(trimmed.substring(0, index)) &&
+                    secondPredicate.test(trimmed.substring(index + 1));
+        }
+        return false;
     }
+
 
     private boolean isBracketed(String input, Predicate<String> bracedPredicate) {
-        return input.startsWith("(") &&
-                input.endsWith(")") &&
-                bracedPredicate.test(input.substring(input.indexOf("("), input.lastIndexOf(")")));
+        String trimmed = input.trim();
+        for (Pattern pattern : BRACKETED_REGEXES) {
+            Matcher matcher = pattern.matcher(trimmed);
+            if (matcher.matches()) {
+                return bracedPredicate.test(matcher.group(CONTENT_GROUP_NAME));
+            }
+        }
+        return false;
     }
-
 }

@@ -5,26 +5,39 @@ import ua.edu.hneu.oop.java.util.ConsoleUtil;
 import java.io.IOException;
 
 public class MainClass {
-    private static final String INVITATION = "All words start or end with vowel:";
+    private static final String EXIT_COMMAND = "exit";
+    private static final String INVITATION = "Enter testing formula or type \"exit\" for exit";
+    private static final String IO_EXCEPTION_FORMAT = "Something went wrong with obtaining value. Original error is:\"%s\".%n%n";
+    private static final String ANSWER_FORMAT = "Entered formula is %s%n";
+
     private static SyntaxAnalyser syntaxAnalyser;
     private static ConsoleUtil consoleUtil;
 
-
     public static void main(String[] args) {
-        try {
-            init();
-//            consoleUtil.println(INVITATION);
+        init();
+        boolean run = true;
+        do {
+            consoleUtil.println(INVITATION);
+            try {
+                String input = consoleUtil.readInput();
+                if (checkIfExit(input)) {
+                    break;
+                }
 
-            consoleUtil.printf("%s - %b", "x", syntaxAnalyser.isFormula("x"));
-            consoleUtil.printf("%s - %b", "x+x", syntaxAnalyser.isFormula("x+x"));
+                consoleUtil.printf(ANSWER_FORMAT, syntaxAnalyser.isFormula(input) ? "VALID" : "INVALID");
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            } catch (IOException e) {
+                consoleUtil.printf(IO_EXCEPTION_FORMAT, e.getMessage());
+                run = false;
+            }
+        } while (run);
     }
 
+    private static boolean checkIfExit(String input) {
+        return input.toLowerCase().contains(EXIT_COMMAND);
+    }
 
-    private static void init() throws IOException {
+    private static void init() {
         syntaxAnalyser = new SyntaxAnalyser();
         syntaxAnalyser.init();
         consoleUtil = ConsoleUtil.getInstance();

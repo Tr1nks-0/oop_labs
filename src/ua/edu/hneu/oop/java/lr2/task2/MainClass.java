@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class MainClass {
     private static final String EXIT_COMMAND = "\\exit";
-    private static final String INVITATION = "Enter phrase for splittins repeatable words, or type \"\\exit\" for exit.";
+    private static final String INVITATION = "Enter phrase for splitting repeatable words, or type \"\\exit\" for exit.";
     private static final String IO_EXCEPTION_FORMAT = "Something went wrong with obtaining value. Original error is:\"%s\".%n%n";
 
     private static ConsoleUtil consoleUtil;

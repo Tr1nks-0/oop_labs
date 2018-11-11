@@ -10,7 +10,7 @@ public class MainClass {
     public static void main(String[] args) {
         init();
 
-        System.out.printf("Area of figure between 2 functions %n\ty=x^2%n\ty=1/x%nArea = %.4f%n", areaCalculator.countArea());
+        consoleUtil.printf("Area of figure between 2 functions %n\ty=x^2%n\ty=1/x%nArea = %.4f%n", areaCalculator.countArea());
 
     }
 

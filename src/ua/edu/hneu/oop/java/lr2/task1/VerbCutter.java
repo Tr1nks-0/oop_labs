@@ -6,14 +6,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.regex.Pattern;
 
 public class VerbCutter {
     private static final String VERB_PATTERN_FORMAT = "(?muU)(?<=\\W)(\\w)*(%s)(?=\\W)";
     private static final String ENDINGS_FILE_NAME = "/verb-endings";
 
     private static List<String> endings;
-    private static Pattern verbPattern;
 
     public VerbCutter() throws IOException {
         if (Objects.isNull(endings)) {
