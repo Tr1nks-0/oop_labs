@@ -1,0 +1,7 @@
+C:\Users\Valeriy Pugachov\source\repos\LK2Part2\SyntaxAnalizer\bin\Debug\SyntaxAnalizer.exe.config
+C:\Users\Valeriy Pugachov\source\repos\LK2Part2\SyntaxAnalizer\bin\Debug\SyntaxAnalizer.exe
+C:\Users\Valeriy Pugachov\source\repos\LK2Part2\SyntaxAnalizer\bin\Debug\SyntaxAnalizer.pdb
+C:\Users\Valeriy Pugachov\source\repos\LK2Part2\SyntaxAnalizer\obj\Debug\SyntaxAnalizer.csprojResolveAssemblyReference.cache
+C:\Users\Valeriy Pugachov\source\repos\LK2Part2\SyntaxAnalizer\obj\Debug\SyntaxAnalizer.csproj.CoreCompileInputs.cache
+C:\Users\Valeriy Pugachov\source\repos\LK2Part2\SyntaxAnalizer\obj\Debug\SyntaxAnalizer.exe
+C:\Users\Valeriy Pugachov\source\repos\LK2Part2\SyntaxAnalizer\obj\Debug\SyntaxAnalizer.pdb
