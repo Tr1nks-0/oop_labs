@@ -1,0 +1,6 @@
+C:\Users\Valeriy Pugachov\source\repos\LR4\Task3\bin\Debug\Task3.exe.config
+C:\Users\Valeriy Pugachov\source\repos\LR4\Task3\bin\Debug\Task3.exe
+C:\Users\Valeriy Pugachov\source\repos\LR4\Task3\bin\Debug\Task3.pdb
+C:\Users\Valeriy Pugachov\source\repos\LR4\Task3\obj\Debug\Task3AndTask4.csproj.CoreCompileInputs.cache
+C:\Users\Valeriy Pugachov\source\repos\LR4\Task3\obj\Debug\Task3.exe
+C:\Users\Valeriy Pugachov\source\repos\LR4\Task3\obj\Debug\Task3.pdb
