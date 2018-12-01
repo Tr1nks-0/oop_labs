@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 public class StudentFactory {
     private static final String SURNAME_REGEX = "(?u)\\p{L}+ *";
-    private static final String INITIALS_REGEX = "(\\p{L}+\\.)( ?\\1)? *";
+    private static final String INITIALS_REGEX = "(\\p{L}+\\.)( ?\\p{L}+\\.)? *";
     private static final String ARRAY_DELIMITERS = "[;,:]";
     private static final String INT_ARRAY_REGEX = "\\d *(" + ARRAY_DELIMITERS + " *\\d)* *";
 

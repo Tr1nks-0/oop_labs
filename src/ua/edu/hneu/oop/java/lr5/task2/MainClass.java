@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.BiPredicate;
 import java.util.stream.Collectors;
 
@@ -82,6 +81,9 @@ public class MainClass {
         consoleUtil.println("Enter path to file");
         String path = consoleUtil.readInput();
         File file = new File(path);
+        if (!file.exists()) {
+            file.createNewFile();
+        }
         if (file.canWrite()) {
             seriallizeUtil.serialize(students, file);
             consoleUtil.println("Students successfully wrote to file");
@@ -105,7 +107,6 @@ public class MainClass {
         }
     }
 
-
     private static void search() throws IOException {
         consoleUtil.printf("Enter number of row where search%n\t1 - surname%n\t2 - initials%n\t3 - group%n\t4 - average mark%n");
         String input = consoleUtil.readInput();
@@ -117,12 +118,13 @@ public class MainClass {
             consoleUtil.println("Enter phrase to search");
             String phrase = consoleUtil.readInput();
 
-            Optional<Student> result = students.stream().filter(s -> SEARCHES[index - 1].test(s, phrase)).findFirst();
+            List<Student> result = students.stream().filter(s -> SEARCHES[index - 1].test(s, phrase)).collect(Collectors.toList());
 
-            if (result.isPresent()) {
-                consoleUtil.println(result.get().toTableString(0));
-            } else {
+            if (result.isEmpty()) {
                 consoleUtil.println("Nothing was found");
+            } else {
+               printStudentsList(result);
+                consoleUtil.printf("%n");
             }
 
         } catch (NumberFormatException e) {
@@ -143,7 +145,7 @@ public class MainClass {
         if (filtered.isEmpty()) {
             consoleUtil.println("There are not any student with mark greater than 3");
         } else {
-            printStudentsList(filtered);
+            filtered.forEach(s -> consoleUtil.printf("%-16s | %-6s | %-5d%n", s.getSurname(), s.getInitials(), s.getGroup()));
         }
 
     }
