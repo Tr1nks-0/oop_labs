@@ -1,0 +1,8 @@
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\bin\Debug\source.txt
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\bin\Debug\LR5.exe.config
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\bin\Debug\LR5.exe
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\bin\Debug\LR5.pdb
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\obj\Debug\LR5.csprojResolveAssemblyReference.cache
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\obj\Debug\LR5.csproj.CoreCompileInputs.cache
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\obj\Debug\LR5.exe
+C:\Users\Valeriy Pugachov\source\repos\LR5\LR5\obj\Debug\LR5.pdb

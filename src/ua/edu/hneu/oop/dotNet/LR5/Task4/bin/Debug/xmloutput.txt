@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfRegexWorker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RegexWorker>
+    <worker>
+      <regex><![CDATA[\d]]></regex>
+      <text><![CDATA[Text]]></text>
+    </worker>
+  </RegexWorker>
+  <RegexWorker>
+    <worker>
+      <regex><![CDATA[\w]]></regex>
+      <text><![CDATA[AnotherText]]></text>
+    </worker>
+  </RegexWorker>
+</ArrayOfRegexWorker>

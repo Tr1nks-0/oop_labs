@@ -1,0 +1,26 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<SOAP-ENC:Array SOAP-ENC:arrayType="a1:RegexWorker[2]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Task4/Task4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<item href="#ref-3"/>
+<item href="#ref-4"/>
+</SOAP-ENC:Array>
+<a1:RegexWorker id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Task4/Task4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<_regex href="#ref-6"/>
+<_text id="ref-7">Text</_text>
+</a1:RegexWorker>
+<a1:RegexWorker id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Task4/Task4%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<_regex href="#ref-8"/>
+<_text id="ref-9">AnotherText</_text>
+</a1:RegexWorker>
+<a2:Regex id="ref-6" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Text.RegularExpressions/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<pattern id="ref-10">\d</pattern>
+<options xsi:type="a2:RegexOptions" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Text.RegularExpressions/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">None</options>
+<matchTimeout>-10000</matchTimeout>
+</a2:Regex>
+<a2:Regex id="ref-8" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Text.RegularExpressions/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<pattern id="ref-11">\w</pattern>
+<options xsi:type="a2:RegexOptions" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Text.RegularExpressions/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">None</options>
+<matchTimeout>-10000</matchTimeout>
+</a2:Regex>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
