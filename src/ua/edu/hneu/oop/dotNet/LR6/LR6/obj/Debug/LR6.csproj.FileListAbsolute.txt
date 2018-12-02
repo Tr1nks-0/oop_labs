@@ -1,0 +1,7 @@
+C:\Users\Valeriy Pugachov\source\repos\LR6\LR6\bin\Debug\LR6.exe.config
+C:\Users\Valeriy Pugachov\source\repos\LR6\LR6\bin\Debug\LR6.exe
+C:\Users\Valeriy Pugachov\source\repos\LR6\LR6\bin\Debug\LR6.pdb
+C:\Users\Valeriy Pugachov\source\repos\LR6\LR6\obj\Debug\LR6.csprojResolveAssemblyReference.cache
+C:\Users\Valeriy Pugachov\source\repos\LR6\LR6\obj\Debug\LR6.csproj.CoreCompileInputs.cache
+C:\Users\Valeriy Pugachov\source\repos\LR6\LR6\obj\Debug\LR6.exe
+C:\Users\Valeriy Pugachov\source\repos\LR6\LR6\obj\Debug\LR6.pdb
