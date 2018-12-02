@@ -1,0 +1,7 @@
+C:\Users\Valeriy Pugachov\source\repos\LR1\AreaCalculator\bin\Debug\AreaCalculator.exe.config
+C:\Users\Valeriy Pugachov\source\repos\LR1\AreaCalculator\bin\Debug\AreaCalculator.exe
+C:\Users\Valeriy Pugachov\source\repos\LR1\AreaCalculator\bin\Debug\AreaCalculator.pdb
+C:\Users\Valeriy Pugachov\source\repos\LR1\AreaCalculator\obj\Debug\AreaCalculator.csprojResolveAssemblyReference.cache
+C:\Users\Valeriy Pugachov\source\repos\LR1\AreaCalculator\obj\Debug\AreaCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Valeriy Pugachov\source\repos\LR1\AreaCalculator\obj\Debug\AreaCalculator.exe
+C:\Users\Valeriy Pugachov\source\repos\LR1\AreaCalculator\obj\Debug\AreaCalculator.pdb
